@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Basic Map ArcGIS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/esri/css/esri.css">
+    <style>
+    #mapBasic {border:solid 1px black;margin:0;padding:0;}
+    </style>
+    
+	<script src="http://js.arcgis.com/3.7/"></script>
+	<script>
+        var map = {};
+        var elementID = 'mapBasic';
+        var zoomSize  = 10;
+        var Lat       = 37.8623390197754;
+        var Lon       = -122.430931091309;
+        var mapType   = 'streets';
+
+	function init() {
+        // arcGIS
+        require(['esri/map', 'dojo/domReady!'], function(Map) { 
+                 map = new Map(elementID, {
+                                center: [Lon, Lat],
+                                zoom: zoomSize,
+                                basemap: mapType
+                            });
+              });
+    }
+    </script>
+</head>
+<body onload="init();">
+
+<div id=mapBasic>
+</div>
+
+</body>
+</html>
+
